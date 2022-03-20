@@ -51,8 +51,38 @@ namespace ArrayList
 
         public void DeleteFromEnd()
         {
+            if (Length <= _array.Length / 2)
+            {
+                DecreaseLengthArray();
+            }
             Length--;
         }
+        public void Write()
+        {
+            Console.Write($"L={Length} RL={_array.Length}   ");
+            for (int i = 0; i < Length; i++)
+            {
+                Console.Write($"{_array[i]} ");
+            }
+            Console.WriteLine();
+        }
+        private void DecreaseLengthArray()
+         {
+            int newLength = _array.Length / 3;
+            int[] newArr = new int[newLength];
+            Copy(newArr);
+        }
+
+        private void Copy(int[] newArr)
+        {
+            for (int i = 0; i < _array.Length; i++)
+            {
+              newArr[i] = _array[i];
+            }
+            _array = newArr;
+        }
+
+
         private void MoveListRight(int index=0)
         {
             int[] newArr = new int[Length + 1];
@@ -67,15 +97,6 @@ namespace ArrayList
             _array = newArr;
         }
 
-        public void Write()
-        {
-            Console.Write($"L={Length} RL={_array.Length}   ");
-            for (int i = 0; i < Length; i++)
-            {
-                Console.Write($"{_array[i]} ");
-            }
-            Console.WriteLine();
-        }
 
         private void UpSize()
         {

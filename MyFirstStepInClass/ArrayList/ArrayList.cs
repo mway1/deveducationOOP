@@ -49,6 +49,10 @@ namespace ArrayList
             Length++;
         }
 
+        public void DeleteFromEnd()
+        {
+            Length--;
+        }
         private void MoveListRight(int index=0)
         {
             int[] newArr = new int[Length + 1];

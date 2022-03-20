@@ -10,8 +10,9 @@ namespace MyFirstStepInClass
             for (int i = 0; i < 10; i++)
             {
                 list.AddLast(i);
-                list.Write();
             }
+            list.AddByIndex(5, 6);
+            list.Write();
         }
    }
 }

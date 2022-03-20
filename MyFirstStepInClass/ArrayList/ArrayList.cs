@@ -38,6 +38,17 @@ namespace ArrayList
             Length++;
         }
 
+        public void AddByIndex(int index,int value)
+        {
+            if (Length + 1 >= _array.Length)
+            {
+                UpSize();
+            }
+            MoveListRight(index);
+            _array[index] = value;
+            Length++;
+        }
+
         private void MoveListRight(int index=0)
         {
             int[] newArr = new int[Length + 1];

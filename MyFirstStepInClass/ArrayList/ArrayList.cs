@@ -25,7 +25,32 @@ namespace ArrayList
             _array[Length] = value;
             Length++;
         }
+        public void AddFirst(int value)
+        {
+            if (Length+1 >= _array.Length)
+            {
+                UpSize();
+            }
 
+            MoveListRight();
+
+            _array[0] = value;
+            Length++;
+        }
+
+        private void MoveListRight(int index=0)
+        {
+            int[] newArr = new int[Length + 1];
+            for (int i = 0; i < index; i++)
+            {
+                newArr[i] = _array[i];
+            }
+            for (int i = index; i < Length; i++)
+            {
+                newArr[i + 1] = _array[i];
+            }
+            _array = newArr;
+        }
 
         public void Write()
         {

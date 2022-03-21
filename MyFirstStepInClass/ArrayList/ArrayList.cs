@@ -51,6 +51,10 @@ namespace ArrayList
 
         public void DeleteFromEnd()
         {
+            if (Length < 1)
+            {
+                throw new Exception("Length of array < 1, add elements and try repeat delete elements");
+            }
             if (Length <= _array.Length / 2)
             {
                 DecreaseLengthArray();
@@ -59,6 +63,10 @@ namespace ArrayList
         }
         public void DeleteFromBeginning()
         {
+            if (Length < 1)
+            {
+                throw new Exception("Length of array < 1, add elements and try repeat delete elements");
+            }
             if (Length <= _array.Length / 2)
             {
                 DecreaseLengthArray();
@@ -69,6 +77,11 @@ namespace ArrayList
 
         public void DeleteByIndex(int index)
         {
+            if (Length < 1)
+            {
+                throw new Exception("Length of array < 1, add elements and try repeat delete elements");
+            }
+
             if (Length <= _array.Length / 2)
             {
                 DecreaseLengthArray();
@@ -77,7 +90,22 @@ namespace ArrayList
             Length--;
         }
 
+        public void DeleteFromEndElements(int count)
+        {
+            if (Length < count)
+            {
+                throw new Exception("Length of array < count of elements, what you want to delete");
+            }
+            if (Length <= _array.Length / 2)
+            {
+                DecreaseLengthArray();
+            }
 
+            for (int i = 0; i < count; i++)
+            {
+                Length--;
+            }
+        }
 
         public void Write()
         {
@@ -88,6 +116,9 @@ namespace ArrayList
             }
             Console.WriteLine();
         }
+
+
+
         private void DecreaseLengthArray()
          {
             int newLength = _array.Length / 3;

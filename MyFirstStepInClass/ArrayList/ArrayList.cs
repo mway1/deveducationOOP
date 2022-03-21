@@ -105,6 +105,22 @@ namespace ArrayList
             {
                 Length--;
             }
+        } 
+        public void DeleteFromBeginingElements(int count)
+        {
+            if (Length < count)
+            {
+                throw new Exception("Length of array < count of elements, what you want to delete");
+            }
+            if (Length <= _array.Length / 2)
+            {
+                DecreaseLengthArray();
+            }
+            for (int i = 0; i < count; i++)
+            {
+                MoveListLeft();
+                Length--;
+            }
         }
 
         public void Write()

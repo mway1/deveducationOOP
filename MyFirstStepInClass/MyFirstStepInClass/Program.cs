@@ -11,7 +11,8 @@ namespace MyFirstStepInClass
             {
                 list.AddLast(i);
             }
-            int a=list.GetValueByIndex(3);
+            list.AddLast(7);
+            int a=list.FindFirstIndexByValue(7);
             list.Write();
             Console.WriteLine($"Val by index: {a}");
         }

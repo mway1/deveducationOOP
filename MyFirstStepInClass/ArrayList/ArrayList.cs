@@ -155,9 +155,9 @@ namespace ArrayList
 
         public int FindFirstIndexByValue(int value)
         {
-            if (Length < 1)
+            if (Length == 0)
             {
-                throw new Exception("Length of arr < 1, not found first index");
+                throw new Exception("Length of arr = 0, not found first index");
             }
             int FirstIndex = 0;
             for (int i = 0; i<Length; i++)
@@ -174,6 +174,19 @@ namespace ArrayList
 
             }
             return FirstIndex;
+        }
+
+        public void ChangeValueByIndex(int index,int value)
+        {
+            if (Length == 0)
+            {
+                throw new Exception("Length of arr = 0, not found elements to change");
+            }
+            if (index > Length)
+            {
+                throw new Exception("Length must be higher than index");
+            }
+            _array[index] = value;
         }
 
 

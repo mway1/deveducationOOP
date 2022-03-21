@@ -11,8 +11,9 @@ namespace MyFirstStepInClass
             {
                 list.AddLast(i);
             }
-            list.DeleteByIndexElements(1,3);
+            int a=list.GetValueByIndex(3);
             list.Write();
+            Console.WriteLine($"Val by index: {a}");
         }
    }
 }

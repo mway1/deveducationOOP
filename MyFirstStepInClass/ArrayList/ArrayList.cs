@@ -139,6 +139,20 @@ namespace ArrayList
             }
         }
 
+        public int GetLength()
+        {
+            return Length;
+        }
+
+        public int GetValueByIndex(int index)
+        {
+            if (index < 0 || index > Length)
+            {
+                throw new Exception("Index must be>=0 and < Length");
+            }
+            return _array[index];
+        }
+
 
 
         public void Write()

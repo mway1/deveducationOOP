@@ -11,7 +11,7 @@ namespace MyFirstStepInClass
             {
                 list.AddLast(i);
             }
-            list.DeleteFromBeginingElements(4);
+            list.DeleteByIndexElements(1,3);
             list.Write();
         }
    }

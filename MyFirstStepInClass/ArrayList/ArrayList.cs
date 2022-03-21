@@ -67,6 +67,18 @@ namespace ArrayList
             Length--;
         }
 
+        public void DeleteByIndex(int index)
+        {
+            if (Length <= _array.Length / 2)
+            {
+                DecreaseLengthArray();
+            }
+            MoveListLeft(index);
+            Length--;
+        }
+
+
+
         public void Write()
         {
             Console.Write($"L={Length} RL={_array.Length}   ");
@@ -107,14 +119,19 @@ namespace ArrayList
             _array = newArr;
         }
 
-        private void MoveListLeft()
+        private void MoveListLeft(int index = 0)
         {
-            int[] newArr = new int[Length - 1];
-            for (int i = 0; i < Length - 1; i++)
+            int[] newArray = new int[Length - 1];
+
+            for (int i = 0; i < index; i++)
             {
-                newArr[i] = _array[i + 1];
+                newArray[i] = _array[i];
             }
-            _array = newArr;
+            for (int i = index; i < Length - 1; i++)
+            {
+                newArray[i] = _array[i + 1];
+            }
+            _array = newArray;
         }
 
 

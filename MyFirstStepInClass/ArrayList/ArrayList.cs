@@ -15,7 +15,29 @@ namespace ArrayList
             Length = 0;
         }
 
-        public void AddLast(int value)
+        public MyArrayList(int value)
+        {
+            _array = new int[10];
+            _array[0] = value;
+            Length = 1;
+        }
+
+        public MyArrayList(int[] array)
+        {
+            if (array == null || array.Length == 0)
+            {
+                _array = new int[10];
+                Length = 0;
+            }
+            else
+            {
+                _array = array;
+                Length = array.Length;
+                UpSize();
+            }
+        }
+
+        public void MyAddLast(int value)
         {
             if (Length >= _array.Length)
             {

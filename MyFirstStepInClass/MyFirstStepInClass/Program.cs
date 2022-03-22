@@ -12,10 +12,11 @@ namespace MyFirstStepInClass
                 list.AddLast(i);
             }
             list.AddLast(22);
+            list.AddFirst(2);
             list.AddLast(2);
             list.AddLast(0);
             list.Write();
-            int a=list.DeleteFirstByValue(5);
+            int a=list.DeleteAllByValue(2);
             list.Write();
             Console.WriteLine(a);
         }

@@ -349,6 +349,25 @@ namespace ArrayList
 
         }
 
+        public int DeleteAllByValue(int value)
+        {
+            int count = 0;
+            for (int i = 0; i < Length; i++)
+            {
+                if (_array[i] == value)
+                {
+                    count++;
+                }
+                else
+                {
+                    _array[i - count] = _array[i];
+                }
+            }
+            Length -= count;
+
+            return count;
+        }
+
 
 
         public void Write()

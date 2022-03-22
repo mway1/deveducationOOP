@@ -37,6 +37,26 @@ namespace ArrayList
             }
         }
 
+        public int this[int index]
+        {
+            get
+            {
+                if (index < 0 || index >= Length)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+                return _array[index];
+            }
+            set
+            {
+                if (index < 0 || index >= Length)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+                _array[index] = value;
+            }
+        }
+
         public void MyAddLast(int value)
         {
             if (Length >= _array.Length)
@@ -390,8 +410,6 @@ namespace ArrayList
             return count;
         }
 
-
-
         public void Write()
         {
             Console.Write($"L={Length} RL={_array.Length}   ");
@@ -400,6 +418,48 @@ namespace ArrayList
                 Console.Write($"{_array[i]} ");
             }
             Console.WriteLine();
+        }
+
+        public override string ToString()
+        {
+            string s = "";
+
+            for (int i = 0; i < Length; i++)
+            {
+                s += $"{_array[i]} ";
+            }
+
+            return s;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            bool isEqual = true;
+
+            if (obj == null || !(obj is MyArrayList))
+            {
+                isEqual = false;
+            }
+            else
+            {
+                MyArrayList list = (MyArrayList)obj;
+
+                if (list.Length != this.Length)
+                {
+                    isEqual = false;
+                }
+                else
+                {
+                    for (int i = 0; i < this.Length; i++)
+                    {
+                        if (list[i] != this[i])
+                        {
+                            isEqual = false;
+                        }
+                    }
+                }
+            }
+            return isEqual;
         }
 
 

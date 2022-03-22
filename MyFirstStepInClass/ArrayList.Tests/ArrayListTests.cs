@@ -56,6 +56,14 @@ namespace ArrayList.Tests
 
             Assert.AreEqual(expectedList, actualList);
         }
+        [TestCaseSource(typeof(DeleteFromEndElementsTestSource))]
+        public void DeleteFromEndElementsTest(int count, MyArrayList list, MyArrayList expectedList)
+        {
+            MyArrayList actualList = list;
+            actualList.DeleteFromEndElements(count);
+
+            Assert.AreEqual(expectedList, actualList);
+        }
 
 
 

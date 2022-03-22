@@ -126,10 +126,6 @@ namespace ArrayList
             {
                 throw new Exception("Length of array < count of elements, what you want to delete");
             }
-            if (Length <= _array.Length / 2)
-            {
-                DecreaseLengthArray();
-            }
 
             for (int i = 0; i < count; i++)
             {

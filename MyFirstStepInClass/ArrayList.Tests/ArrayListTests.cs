@@ -48,6 +48,14 @@ namespace ArrayList.Tests
 
             Assert.AreEqual(expectedList, actualList);
         }
+        [TestCaseSource(typeof(DeleteByIndexTestSource))]
+        public void DeleteByIndexTest(int index, MyArrayList list, MyArrayList expectedList)
+        {
+            MyArrayList actualList = list;
+            actualList.DeleteByIndex(index);
+
+            Assert.AreEqual(expectedList, actualList);
+        }
 
 
 

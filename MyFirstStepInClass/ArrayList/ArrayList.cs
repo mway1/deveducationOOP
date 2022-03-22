@@ -116,10 +116,6 @@ namespace ArrayList
                 throw new Exception("Length of array < 1, add elements and try repeat delete elements");
             }
 
-            if (Length <= _array.Length / 2)
-            {
-                DecreaseLengthArray();
-            }
             MoveListLeft(index);
             Length--;
         }

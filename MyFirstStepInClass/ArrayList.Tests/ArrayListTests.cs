@@ -22,6 +22,15 @@ namespace ArrayList.Tests
             actualList.AddFirst(value);
 
             Assert.AreEqual(expectedList, actualList);
+        } 
+        
+        [TestCaseSource(typeof(AddByIndexTestSource))]
+        public void AddByIndexTest(int index, int value, MyArrayList list, MyArrayList expectedList)
+        {
+            MyArrayList actualList = list;
+            actualList.AddByIndex(index,value);
+
+            Assert.AreEqual(expectedList, actualList);
         }
 
 

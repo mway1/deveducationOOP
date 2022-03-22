@@ -40,6 +40,14 @@ namespace ArrayList.Tests
 
             Assert.AreEqual(expectedList, actualList);
         }
+        [TestCaseSource(typeof(DeleteFromBeginningTestSource))]
+        public void DeleteFromBeginningTest(MyArrayList list, MyArrayList expectedList)
+        {
+            MyArrayList actualList = list;
+            actualList.DeleteFromBeginning();
+
+            Assert.AreEqual(expectedList, actualList);
+        }
 
 
 

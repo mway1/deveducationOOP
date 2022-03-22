@@ -12,7 +12,8 @@ namespace MyFirstStepInClass
                 list.AddLast(i);
             }
             list.AddLast(7);
-            list.ChangeValueByIndex(3,6);
+            list.Write();
+            list.ReverseArray();
             list.Write();
         }
    }

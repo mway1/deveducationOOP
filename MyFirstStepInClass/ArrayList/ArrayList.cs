@@ -189,6 +189,23 @@ namespace ArrayList
             _array[index] = value;
         }
 
+        public void ReverseArray()
+        {
+            if (Length < 1)
+            {
+                throw new Exception("Length of array < 1, add elements and try repeat");
+            }
+
+            int[] newArr = new int[Length];
+
+            for (int i=0; i<Length; i++)
+            {
+                newArr[i] += _array[Length - 1 - i];
+            }
+            _array = newArr;
+
+        }
+
 
 
         public void Write()

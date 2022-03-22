@@ -57,7 +57,7 @@ namespace ArrayList
             }
         }
 
-        public void MyAddLast(int value)
+        public void AddLast(int value)
         {
             if (Length >= _array.Length)
             {

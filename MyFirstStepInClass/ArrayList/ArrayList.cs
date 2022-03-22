@@ -324,6 +324,31 @@ namespace ArrayList
             }
         }
 
+        public int DeleteFirstByValue(int value)
+        {
+            if (Length == 0)
+            {
+                throw new Exception("Length of arr = 0, not found elements to delete");
+            }
+
+            int firstIndex = 0;
+            for (int i = 0; i < Length; i++)
+            {
+                if (_array[i] == value)
+                {
+                    firstIndex = i;
+                    DeleteByIndex(firstIndex);
+                    break;
+                }
+                else
+                {
+                    firstIndex = -1;
+                }
+            }
+            return firstIndex;
+
+        }
+
 
 
         public void Write()

@@ -15,8 +15,9 @@ namespace MyFirstStepInClass
             list.AddLast(2);
             list.AddLast(0);
             list.Write();
-            list.SortDescendingSelectSort();
+            int a=list.DeleteFirstByValue(5);
             list.Write();
+            Console.WriteLine(a);
         }
    }
 }

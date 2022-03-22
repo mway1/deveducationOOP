@@ -15,13 +15,11 @@ namespace ArrayList.Tests.ArrayListTestsSources
             MyArrayList expectedList = new MyArrayList(new int[] { 1, 2, 3, 3 });
             yield return new object[] { value, list, expectedList };
 
-            yield return new object[] {2, new MyArrayList(new int[] { 3, }), new MyArrayList(new int[] { 3, 2}) };
-            
-            yield return new object[] {10, new MyArrayList(new int[] { }), new MyArrayList(new int[] {10 }) };
+            yield return new object[] { 2, new MyArrayList(new int[] { 3, }), new MyArrayList(new int[] { 3, 2 }) };
+
+            yield return new object[] { 10, new MyArrayList(new int[] { }), new MyArrayList(new int[] { 10 }) };
 
         }
-
-
 
     }
 }

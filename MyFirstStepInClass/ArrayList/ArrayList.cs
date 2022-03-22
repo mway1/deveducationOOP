@@ -241,6 +241,45 @@ namespace ArrayList
                 }
             }
             return min;
+        } 
+        public int FindIndexOfMaxElement()
+        {
+            if (Length < 1)
+            {
+                throw new Exception("Length of array < 1, add elements and try to repeat");
+            }
+
+            int max = _array[0];
+            int indexMax = 0;
+
+            for (int i=0; i < Length; i++)
+            {
+                if (_array[i] > max)
+                {
+                    max=_array[i];
+                    indexMax = i;
+                }
+            }
+            return indexMax;
+        }
+        public int FindIndexOfMinElement()
+        {
+            if (Length < 1)
+            {
+                throw new Exception("Length of array < 1, add elements and try to repeat");
+            }
+
+            int min = _array[0];
+            int indexMin = 0;
+            for (int i=0; i < Length; i++)
+            {
+                if (_array[i] < min)
+                {
+                    min=_array[i];
+                    indexMin = i;
+                }
+            }
+            return indexMin;
         }
 
 

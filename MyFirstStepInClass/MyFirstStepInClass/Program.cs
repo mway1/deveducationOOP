@@ -11,9 +11,9 @@ namespace MyFirstStepInClass
             {
                 list.AddLast(i);
             }
-            list.AddLast(7);
-            int a=list.FindMaxElement();
-            int b = list.FindMinElement();
+            list.AddLast(22);
+            int a=list.FindIndexOfMaxElement();
+            int b = list.FindIndexOfMinElement();
             list.Write();
             Console.WriteLine(a);
             Console.WriteLine(b);

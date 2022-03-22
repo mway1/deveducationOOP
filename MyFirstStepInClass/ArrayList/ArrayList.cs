@@ -302,6 +302,27 @@ namespace ArrayList
                 }
             }
         }
+        public void SortDescendingSelectSort()
+        {
+            if (Length < 1)
+            {
+                throw new Exception("Length of array < 1, add elements and try to repeat");
+            }
+            for (int i = 0; i < Length; i++)
+            {
+                int min = i;
+                for (int j = i + 1; j < Length; j++)
+                {
+                    if (_array[j] > _array[min])
+                    {
+                        min = j;
+                    }
+                }
+                int temp = _array[min];
+                _array[min] = _array[i];
+                _array[i] = temp;
+            }
+        }
 
 
 

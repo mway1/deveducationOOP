@@ -15,7 +15,7 @@ namespace MyFirstStepInClass
             list.AddLast(2);
             list.AddLast(0);
             list.Write();
-            list.SortAscendingBubbleSort();
+            list.SortDescendingSelectSort();
             list.Write();
         }
    }

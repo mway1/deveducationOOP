@@ -12,11 +12,11 @@ namespace MyFirstStepInClass
                 list.AddLast(i);
             }
             list.AddLast(22);
-            int a=list.FindIndexOfMaxElement();
-            int b = list.FindIndexOfMinElement();
+            list.AddLast(2);
+            list.AddLast(0);
             list.Write();
-            Console.WriteLine(a);
-            Console.WriteLine(b);
+            list.SortAscendingBubbleSort();
+            list.Write();
         }
    }
 }

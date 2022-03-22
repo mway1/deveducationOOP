@@ -282,6 +282,27 @@ namespace ArrayList
             return indexMin;
         }
 
+        public void SortAscendingBubbleSort()
+        {
+            if (Length < 1)
+            {
+                throw new Exception("Length of array < 1, add elements and try to repeat");
+            }
+            int temp;
+            for (int i = 0; i < Length; i++)
+            {
+                for (int j = i + 1; j < Length; j++)
+                {
+                    if (_array[i] > _array[j])
+                    {
+                        temp = _array[i];
+                        _array[i] = _array[j];
+                        _array[j] = temp;
+                    }
+                }
+            }
+        }
+
 
 
         public void Write()

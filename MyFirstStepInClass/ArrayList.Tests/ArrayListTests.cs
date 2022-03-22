@@ -31,6 +31,14 @@ namespace ArrayList.Tests
             actualList.AddByIndex(index,value);
 
             Assert.AreEqual(expectedList, actualList);
+        } 
+        [TestCaseSource(typeof(DeleteFromEndTestSource))]
+        public void DeleteFromEndTest(MyArrayList list, MyArrayList expectedList)
+        {
+            MyArrayList actualList = list;
+            actualList.DeleteFromEnd();
+
+            Assert.AreEqual(expectedList, actualList);
         }
 
 

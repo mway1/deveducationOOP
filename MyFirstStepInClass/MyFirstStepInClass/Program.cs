@@ -7,14 +7,16 @@ namespace MyFirstStepInClass
         static void Main(string[] args)
         {
             MyArrayList list = new MyArrayList();
-            for (int i = 0; i < 10; i++)
+            for (int i = 4; i < 10; i++)
             {
                 list.AddLast(i);
             }
             list.AddLast(7);
+            int a=list.FindMaxElement();
+            int b = list.FindMinElement();
             list.Write();
-            list.ReverseArray();
-            list.Write();
+            Console.WriteLine(a);
+            Console.WriteLine(b);
         }
    }
 }

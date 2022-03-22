@@ -193,7 +193,7 @@ namespace ArrayList
         {
             if (Length < 1)
             {
-                throw new Exception("Length of array < 1, add elements and try repeat");
+                throw new Exception("Length of array < 1, add elements and try to repeat");
             }
 
             int[] newArr = new int[Length];
@@ -204,6 +204,43 @@ namespace ArrayList
             }
             _array = newArr;
 
+        }
+
+        public int FindMaxElement()
+        {
+            if (Length < 1)
+            {
+                throw new Exception("Length of array < 1, add elements and try to repeat");
+            }
+
+            int max = _array[0];
+
+            for (int i=0; i < Length; i++)
+            {
+                if (_array[i] > max)
+                {
+                    max=_array[i];
+                }
+            }
+            return max;
+        }
+        public int FindMinElement()
+        {
+            if (Length < 1)
+            {
+                throw new Exception("Length of array < 1, add elements and try to repeat");
+            }
+
+            int min = _array[0];
+
+            for (int i=0; i < Length; i++)
+            {
+                if (_array[i] < min)
+                {
+                    min=_array[i];
+                }
+            }
+            return min;
         }
 
 

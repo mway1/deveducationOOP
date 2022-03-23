@@ -6,7 +6,7 @@ namespace ArrayList.Tests
 {
     public class MyArrayListTests
     {
-            [TestCaseSource(typeof(AddLastTestSource))]
+       [TestCaseSource(typeof(AddLastTestSource))]
        public void AddLastTest(int value, MyArrayList list, MyArrayList expectedList)
        {
             MyArrayList actualList = list;
@@ -56,11 +56,21 @@ namespace ArrayList.Tests
 
             Assert.AreEqual(expectedList, actualList);
         }
+
         [TestCaseSource(typeof(DeleteFromEndElementsTestSource))]
         public void DeleteFromEndElementsTest(int count, MyArrayList list, MyArrayList expectedList)
         {
             MyArrayList actualList = list;
             actualList.DeleteFromEndElements(count);
+
+            Assert.AreEqual(expectedList, actualList);
+        }
+        
+        [TestCaseSource(typeof(DeleteFromBeginingElementsTestSource))]
+        public void DeleteFromBeginingElementsTest(int count, MyArrayList list, MyArrayList expectedList)
+        {
+            MyArrayList actualList = list;
+            actualList.DeleteFromBeginingElements(count);
 
             Assert.AreEqual(expectedList, actualList);
         }

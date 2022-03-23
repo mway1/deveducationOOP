@@ -83,6 +83,12 @@ namespace ArrayList.Tests
 
             Assert.AreEqual(expectedList, actualList);
         }
+        [TestCaseSource(typeof(GetLengthTestSource))]
+        public void GetLengthTest( MyArrayList list, int expected)
+        {
+            int actual = list.GetLength();
+            Assert.AreEqual(expected, actual);
+        }
 
 
 

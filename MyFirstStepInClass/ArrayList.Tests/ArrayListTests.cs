@@ -89,6 +89,13 @@ namespace ArrayList.Tests
             int actual = list.GetLength();
             Assert.AreEqual(expected, actual);
         }
+        
+        [TestCaseSource(typeof(GetValueByIndexTestSource))]
+        public void GetValueByIndexTest( MyArrayList list,int index, int expected)
+        {
+            int actual = list.GetValueByIndex(index);
+            Assert.AreEqual(expected, actual);
+        }
 
 
 

@@ -120,6 +120,13 @@ namespace ArrayList.Tests
             Assert.AreEqual(expectedList, actualList);
         }
 
+        [TestCaseSource(typeof(FindMaxElementTestSource))]
+        public void FindMaxElementTest(MyArrayList list, int expected)
+        {
+            int actual = list.FindMaxElement();
+            Assert.AreEqual(expected, actual);
+        }
+
 
 
     }

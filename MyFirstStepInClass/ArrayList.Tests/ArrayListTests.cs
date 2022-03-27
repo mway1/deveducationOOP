@@ -175,6 +175,18 @@ namespace ArrayList.Tests
             Assert.AreEqual(expectedList, actualList);
             Assert.AreEqual(expected, actual);
         }
+        
+        [TestCaseSource(typeof(DeleteAllByValueTestSource))]
+        public void DeleteAllByValueTest(int value, MyArrayList list, MyArrayList expectedList,int expected)
+        {
+            int actual = list.DeleteAllByValue(value);
+            MyArrayList actualList = list;
+            actualList.DeleteAllByValue(value);
+
+
+            Assert.AreEqual(expectedList, actualList);
+            Assert.AreEqual(expected, actual);
+        }
 
 
     }

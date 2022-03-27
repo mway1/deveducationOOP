@@ -103,6 +103,14 @@ namespace ArrayList.Tests
             int actual = list.FindFirstIndexByValue(value);
             Assert.AreEqual(expected, actual);
         }
+        
+        [TestCaseSource(typeof(ChangeValueByIndexTestSource))]
+        public void ChangeValueByIndexTest(int index, int value, MyArrayList list, MyArrayList expectedList)
+        {
+            MyArrayList actualList = list;
+            actualList.ChangeValueByIndex(index,value);
+            Assert.AreEqual(expectedList, actualList);
+        }
 
 
 

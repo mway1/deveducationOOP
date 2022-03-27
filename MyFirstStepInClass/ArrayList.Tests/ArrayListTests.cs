@@ -96,6 +96,13 @@ namespace ArrayList.Tests
             int actual = list.GetValueByIndex(index);
             Assert.AreEqual(expected, actual);
         }
+        
+        [TestCaseSource(typeof(FindFirstIndexByValueTestSource))]
+        public void FindFirstIndexByValueTest( MyArrayList list,int value, int expected)
+        {
+            int actual = list.FindFirstIndexByValue(value);
+            Assert.AreEqual(expected, actual);
+        }
 
 
 

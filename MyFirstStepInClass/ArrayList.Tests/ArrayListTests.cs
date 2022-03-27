@@ -111,6 +111,14 @@ namespace ArrayList.Tests
             actualList.ChangeValueByIndex(index,value);
             Assert.AreEqual(expectedList, actualList);
         }
+        
+        [TestCaseSource(typeof(ReverseArrayTestSource))]
+        public void ReverseArrayTest(MyArrayList list, MyArrayList expectedList)
+        {
+            MyArrayList actualList = list;
+            actualList.ReverseArray();
+            Assert.AreEqual(expectedList, actualList);
+        }
 
 
 

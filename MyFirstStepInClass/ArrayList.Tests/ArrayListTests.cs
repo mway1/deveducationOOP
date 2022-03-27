@@ -155,6 +155,14 @@ namespace ArrayList.Tests
             actualList.SortAscendingBubbleSort();
             Assert.AreEqual(expectedList, actualList);
         }
+        
+        [TestCaseSource(typeof(SortDescendingSelectSortTestSource))]
+        public void SortDescendingSelectSortTest(MyArrayList list, MyArrayList expectedList)
+        {
+            MyArrayList actualList = list;
+            actualList.SortDescendingSelectSort();
+            Assert.AreEqual(expectedList, actualList);
+        }
 
 
     }

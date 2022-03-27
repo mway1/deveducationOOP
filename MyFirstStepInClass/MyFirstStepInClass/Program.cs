@@ -7,13 +7,15 @@ namespace MyFirstStepInClass
         static void Main(string[] args)
         {
             MyArrayList list = new MyArrayList();
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 10; i++)
             {
                 list.AddLast(i);
             }
             list.Write();
-            list.DeleteByIndex(2);
+            int a = list.DeleteFirstByValue(4);
+            list.DeleteFirstByValue(4);
             list.Write();
+            Console.WriteLine(a);
         }
    }
 }

@@ -111,7 +111,7 @@ namespace ArrayList.Tests
             actualList.ChangeValueByIndex(index,value);
             Assert.AreEqual(expectedList, actualList);
         }
-        
+
         [TestCaseSource(typeof(ReverseArrayTestSource))]
         public void ReverseArrayTest(MyArrayList list, MyArrayList expectedList)
         {
@@ -119,7 +119,7 @@ namespace ArrayList.Tests
             actualList.ReverseArray();
             Assert.AreEqual(expectedList, actualList);
         }
-
+        
         [TestCaseSource(typeof(FindMaxElementTestSource))]
         public void FindMaxElementTest(MyArrayList list, int expected)
         {
@@ -148,6 +148,13 @@ namespace ArrayList.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCaseSource(typeof(SortAscendingBubbleSortTestSource))]
+        public void SortAscendingBubbleSortTest(MyArrayList list, MyArrayList expectedList)
+        {
+            MyArrayList actualList = list;
+            actualList.SortAscendingBubbleSort();
+            Assert.AreEqual(expectedList, actualList);
+        }
 
 
     }

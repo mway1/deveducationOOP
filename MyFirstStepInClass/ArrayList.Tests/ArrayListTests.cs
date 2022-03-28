@@ -220,11 +220,23 @@ namespace ArrayList.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCaseSource(typeof(FindIndexOfMaxElementNegativeTestSource))]
+        public void FindIndexOfMaxElement_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
+        {
+            Assert.Throws<Exception>(() => list.FindIndexOfMaxElement());
+        }
+
         [TestCaseSource(typeof(FindIndexOfMinElementTestSource))]
         public void FindIndexOfMinElementTest(MyArrayList list, int expected)
         {
             int actual = list.FindIndexOfMinElement();
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestCaseSource(typeof(FindIndexOfMinElementNegativeTestSource))]
+        public void FindIndexOfMinElement_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
+        {
+            Assert.Throws<Exception>(() => list.FindIndexOfMinElement());
         }
 
         [TestCaseSource(typeof(SortAscendingBubbleSortTestSource))]

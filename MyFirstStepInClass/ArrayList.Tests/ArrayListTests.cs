@@ -151,13 +151,25 @@ namespace ArrayList.Tests
             int actual = list.FindFirstIndexByValue(value);
             Assert.AreEqual(expected, actual);
         }
-        
+
+        [TestCaseSource(typeof(FindFirstIndexByValueNegativeTestSource))]
+        public void FindFirstIndexByValue_WhenLengthEqualZero_ShouldThrowNewException(int value, MyArrayList list)
+        {
+            Assert.Throws<Exception>(() => list.FindFirstIndexByValue(value));
+        }
+
         [TestCaseSource(typeof(ChangeValueByIndexTestSource))]
         public void ChangeValueByIndexTest(int index, int value, MyArrayList list, MyArrayList expectedList)
         {
             MyArrayList actualList = list;
             actualList.ChangeValueByIndex(index,value);
             Assert.AreEqual(expectedList, actualList);
+        }
+
+        [TestCaseSource(typeof(ChangeValueByIndexNegativeTestSource))]
+        public void ChangeValueByIndex_WhenLengthEqualZeroOrIndexMoreLength_ShouldThrowNewException(int index,int value, MyArrayList list)
+        {
+            Assert.Throws<Exception>(() => list.ChangeValueByIndex(index,value));
         }
 
         [TestCaseSource(typeof(ReverseArrayTestSource))]

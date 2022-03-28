@@ -312,6 +312,14 @@ namespace ArrayList.Tests
             Assert.Throws<NullReferenceException>(() => list.AddListToEnd(list));
         }
 
+        [TestCaseSource(typeof(AddListToBeginingTestSource))]
+        public void AddListToBeginingTest(MyArrayList list, MyArrayList list2, MyArrayList expectedList)
+        {
+            MyArrayList actualList = list;
+            actualList.AddListToBegining(list2);
+
+            Assert.AreEqual(expectedList, actualList);
+        }
 
     }
 }

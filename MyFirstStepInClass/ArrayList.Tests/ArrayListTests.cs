@@ -297,6 +297,15 @@ namespace ArrayList.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCaseSource(typeof(AddListToEndTestSource))]
+        public void AddListToEndTest(MyArrayList list, MyArrayList list2 ,MyArrayList expectedList)
+        {
+            MyArrayList actualList = list;
+            actualList.AddListToEnd(list2);
+
+            Assert.AreEqual(expectedList, actualList);
+        }
+
 
     }
 }

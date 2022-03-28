@@ -94,7 +94,13 @@ namespace ArrayList.Tests
 
             Assert.AreEqual(expectedList, actualList);
         }
-        
+
+        [TestCaseSource(typeof(DeleteFromEndElementsNegativeTestSource))]
+        public void DeleteFromEndElements_WhenCountLessLength_ShouldThrowNewException(int count, MyArrayList list)
+        {
+            Assert.Throws<Exception>(() => list.DeleteFromEndElements(count));
+        }
+
         [TestCaseSource(typeof(DeleteFromBeginingElementsTestSource))]
         public void DeleteFromBeginingElementsTest(int count, MyArrayList list, MyArrayList expectedList)
         {

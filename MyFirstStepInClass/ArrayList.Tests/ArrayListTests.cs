@@ -246,13 +246,25 @@ namespace ArrayList.Tests
             actualList.SortAscendingBubbleSort();
             Assert.AreEqual(expectedList, actualList);
         }
-        
+
+        [TestCaseSource(typeof(SortAscendingBubbleSortNegativeTestSource))]
+        public void SortAscendingBubbleSort_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
+        {
+            Assert.Throws<Exception>(() => list.SortAscendingBubbleSort());
+        }
+
         [TestCaseSource(typeof(SortDescendingSelectSortTestSource))]
         public void SortDescendingSelectSortTest(MyArrayList list, MyArrayList expectedList)
         {
             MyArrayList actualList = list;
             actualList.SortDescendingSelectSort();
             Assert.AreEqual(expectedList, actualList);
+        }
+
+        [TestCaseSource(typeof(SortDescendingSelectSortNegativeTestSource))]
+        public void SortDescendingSelectSort_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
+        {
+            Assert.Throws<Exception>(() => list.SortDescendingSelectSort());
         }
 
         [TestCaseSource(typeof(DeleteFirstByValueTestSource))]

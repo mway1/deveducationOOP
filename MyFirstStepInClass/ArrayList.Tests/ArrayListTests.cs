@@ -193,12 +193,24 @@ namespace ArrayList.Tests
             int actual = list.FindMaxElement();
             Assert.AreEqual(expected, actual);
         }
-        
+
+        [TestCaseSource(typeof(FindMaxElementNegativeTestSource))]
+        public void FindMaxElement_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
+        {
+            Assert.Throws<Exception>(() => list.FindMaxElement());
+        }
+
         [TestCaseSource(typeof(FindMinElementTestSource))]
         public void FindMinElementTest(MyArrayList list, int expected)
         {
             int actual = list.FindMinElement();
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestCaseSource(typeof(FindMinElementNegativeTestSource))]
+        public void FindMinElement_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
+        {
+            Assert.Throws<Exception>(() => list.FindMinElement());
         }
 
         [TestCaseSource(typeof(FindIndexOfMaxElementTestSource))]

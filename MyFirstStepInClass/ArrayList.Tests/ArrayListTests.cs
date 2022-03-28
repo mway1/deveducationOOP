@@ -1,6 +1,8 @@
+using System;
 using NUnit.Framework;
 using System.Collections;
 using ArrayList.Tests.ArrayListTestsSources;
+using ArrayList.Tests.ArrayListNegativeTestsSources;
 
 namespace ArrayList.Tests
 {
@@ -31,7 +33,14 @@ namespace ArrayList.Tests
             actualList.AddByIndex(index,value);
 
             Assert.AreEqual(expectedList, actualList);
-        } 
+        }
+
+        [TestCaseSource(typeof(AddByIndexNegativeTestSource))]
+        public void AddByIndex_WhenIndexIsWrong_ShouldThrowNewException(int index, int value, MyArrayList list)
+        {
+            Assert.Throws<ArgumentException>(() => list.AddByIndex(index, value));
+        }
+
         [TestCaseSource(typeof(DeleteFromEndTestSource))]
         public void DeleteFromEndTest(MyArrayList list, MyArrayList expectedList)
         {

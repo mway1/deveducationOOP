@@ -82,6 +82,11 @@ namespace ArrayList
 
         public void AddByIndex(int index,int value)
         {
+            if (index > Length || index < 0)
+            {
+                throw new ArgumentException("index > length or < 0");
+            }
+
             if (Length + 1 >= _array.Length)
             {
                 UpSize();

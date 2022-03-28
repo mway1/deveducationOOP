@@ -116,7 +116,7 @@ namespace ArrayList
 
         public void DeleteByIndex(int index)
         {
-            if (Length < 1)
+            if (index>Length || Length < 1)
             {
                 throw new Exception("Length of array < 1, add elements and try repeat delete elements");
             }

@@ -80,6 +80,12 @@ namespace ArrayList.Tests
             Assert.AreEqual(expectedList, actualList);
         }
 
+        [TestCaseSource(typeof(DeleteByIndexNegativeTestSource))]
+        public void DeleteByIndex_WhenLengthLessOne_ShouldThrowNewException(int index,MyArrayList list)
+        {
+            Assert.Throws<Exception>(() => list.DeleteByIndex(index));
+        }
+
         [TestCaseSource(typeof(DeleteFromEndElementsTestSource))]
         public void DeleteFromEndElementsTest(int count, MyArrayList list, MyArrayList expectedList)
         {

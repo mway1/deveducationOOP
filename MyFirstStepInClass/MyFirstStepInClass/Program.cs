@@ -18,7 +18,7 @@ namespace MyFirstStepInClass
             }
             
             list.Write();
-            list.AddListToBegining(list2);
+            list.AddListByIndex(list2,4);
             list.Write();
         }
    }

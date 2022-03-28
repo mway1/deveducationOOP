@@ -409,6 +409,21 @@ namespace ArrayList
 
             AddListWithIndex(list);
         }
+        
+        public void AddListByIndex(MyArrayList list,int index)
+        {
+            if (list is null)
+            {
+                throw new NullReferenceException();
+            }
+            if (index < 0 || index > Length)
+            {
+                throw new ArgumentException("index is wrong");
+            }
+
+            AddListWithIndex(list,index);
+        }
+
 
 
         public void Write()

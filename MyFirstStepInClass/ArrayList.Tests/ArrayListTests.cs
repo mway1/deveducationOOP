@@ -81,7 +81,7 @@ namespace ArrayList.Tests
         }
 
         [TestCaseSource(typeof(DeleteByIndexNegativeTestSource))]
-        public void DeleteByIndex_WhenLengthLessOne_ShouldThrowNewException(int index,MyArrayList list)
+        public void DeleteByIndex_WhenLengthLessOne_ShouldThrowNewException(int index, MyArrayList list)
         {
             Assert.Throws<Exception>(() => list.DeleteByIndex(index));
         }

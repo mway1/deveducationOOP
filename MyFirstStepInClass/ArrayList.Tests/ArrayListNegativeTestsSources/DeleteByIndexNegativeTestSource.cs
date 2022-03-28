@@ -10,8 +10,8 @@ namespace ArrayList.Tests.ArrayListNegativeTestsSources
     {
         public IEnumerator GetEnumerator()
         {
-            yield return new object[] { new MyArrayList(new int[] { }) };
-            yield return new object[] {3, new MyArrayList(new int[] {1,2,3}) };
+            yield return new object[] {1, new MyArrayList(new int[] { }) };
+            yield return new object[] {4, new MyArrayList(new int[] {1,2,3}) };
         }
 
     }

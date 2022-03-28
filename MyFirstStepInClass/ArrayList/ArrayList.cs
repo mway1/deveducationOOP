@@ -400,6 +400,16 @@ namespace ArrayList
             AddList(list);
         }
 
+        public void AddListToBegining(MyArrayList list)
+        {
+            if (list is null)
+            {
+                throw new NullReferenceException();
+            }
+
+            AddListWithIndex(list);
+        }
+
 
         public void Write()
         {

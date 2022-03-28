@@ -11,11 +11,14 @@ namespace MyFirstStepInClass
             for (int i = 0; i < 10; i++)
             {
                 list.AddLast(i);
+            }
+            for (int i = 19; i < 24; i++)
+            {
                 list2.AddLast(i);
             }
-
+            
             list.Write();
-            list.AddListToEnd(list2);
+            list.AddListToBegining(list2);
             list.Write();
         }
    }

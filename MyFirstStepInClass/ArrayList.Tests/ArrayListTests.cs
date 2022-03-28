@@ -64,6 +64,13 @@ namespace ArrayList.Tests
 
             Assert.AreEqual(expectedList, actualList);
         }
+
+        [TestCaseSource(typeof(DeleteFromBeginningNegativeTestSource))]
+        public void DeleteFromBeginning_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
+        {
+            Assert.Throws<Exception>(() => list.DeleteFromBeginning());
+        }
+
         [TestCaseSource(typeof(DeleteByIndexTestSource))]
         public void DeleteByIndexTest(int index, MyArrayList list, MyArrayList expectedList)
         {

@@ -179,7 +179,14 @@ namespace ArrayList.Tests
             actualList.ReverseArray();
             Assert.AreEqual(expectedList, actualList);
         }
-        
+
+        [TestCaseSource(typeof(ReverseArrayNegativeTestSource))]
+        public void ReverseArray_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
+        {
+            Assert.Throws<Exception>(() => list.ReverseArray());
+        }
+
+
         [TestCaseSource(typeof(FindMaxElementTestSource))]
         public void FindMaxElementTest(MyArrayList list, int expected)
         {

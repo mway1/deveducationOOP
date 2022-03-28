@@ -125,11 +125,6 @@ namespace ArrayList.Tests
             Assert.AreEqual(expectedList, actualList);
         }
 
-        [TestCaseSource(typeof(DeleteByIndexElementsNegativeTestSource))]
-        public void DeleteByIndexElements_WhenCountLessLength_ShouldThrowNewException(int index, int count, MyArrayList list)
-        {
-            Assert.Throws<Exception>(() => list.DeleteByIndexElements(index,count));
-        }
         [TestCaseSource(typeof(GetLengthTestSource))]
         public void GetLengthTest( MyArrayList list, int expected)
         {
@@ -142,6 +137,12 @@ namespace ArrayList.Tests
         {
             int actual = list.GetValueByIndex(index);
             Assert.AreEqual(expected, actual);
+        }
+        
+        [TestCaseSource(typeof(GetValueByIndexNegativeTestSource))]
+        public void GetValueByIndex_WhenIndexLessNullAndIndexMoreLength_ShouldThrowNewException(int index, MyArrayList list)
+        {
+            Assert.Throws<Exception>(() => list.GetValueByIndex(index));
         }
         
         [TestCaseSource(typeof(FindFirstIndexByValueTestSource))]

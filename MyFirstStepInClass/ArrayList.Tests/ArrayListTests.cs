@@ -278,7 +278,13 @@ namespace ArrayList.Tests
             Assert.AreEqual(expectedList, actualList);
             Assert.AreEqual(expected, actual);
         }
-        
+
+        [TestCaseSource(typeof(DeleteFirstByValueNegativeTestSource))]
+        public void DeleteFirstByValuet_WhenLengthEqualZero_ShouldThrowNewException(int value,MyArrayList list)
+        {
+            Assert.Throws<Exception>(() => list.DeleteFirstByValue(value));
+        }
+
         [TestCaseSource(typeof(DeleteAllByValueTestSource))]
         public void DeleteAllByValueTest(int value, MyArrayList list, MyArrayList expectedList,int expected)
         {

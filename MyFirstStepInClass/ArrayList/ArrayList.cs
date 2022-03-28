@@ -390,6 +390,16 @@ namespace ArrayList
 
             return count;
         }
+        public void AddListToEnd(MyArrayList list)
+        {
+            if (list is null)
+            {
+                throw new NullReferenceException();
+            }
+
+            AddList(list);
+        }
+
 
         public void Write()
         {
@@ -445,23 +455,6 @@ namespace ArrayList
 
 
 
-        private void DecreaseLengthArray()
-         {
-            int newLength = _array.Length / 3;
-            int[] newArr = new int[newLength];
-            Copy(newArr);
-        }
-
-        private void Copy(int[] newArr)
-        {
-            for (int i = 0; i < _array.Length; i++)
-            {
-              newArr[i] = _array[i];
-            }
-            _array = newArr;
-        }
-
-
         private void MoveListRight(int index=0)
         {
             int[] newArr = new int[Length + 1];
@@ -502,6 +495,40 @@ namespace ArrayList
             }
             _array = newArray;
         }
+
+        private void AddList(MyArrayList list)
+        {
+            int[] newArray = new int[list.Length + this.Length];
+            for (int i = 0; i < this.Length; i++)
+            {
+                newArray[i] = this[i];
+            }
+            for (int i = this.Length; i < newArray.Length; i++)
+            {
+                newArray[i] = list[i - Length];
+            }
+            Length += list.Length;
+            _array = newArray;
+        }
+        private void AddListWithIndex(MyArrayList list, int index = 0)
+        {
+            int[] newArray = new int[list.Length + _array.Length];
+            for (int i = 0; i < index; i++)
+            {
+                newArray[i] = _array[i];
+            }
+            for (int i = index; i < list.Length + index; i++)
+            {
+                newArray[i] = list[i - index];
+            }
+            for (int i = index + list.Length; i < newArray.Length; i++)
+            {
+                newArray[i] = _array[i - list.Length];
+            }
+            Length += list.Length;
+            _array = newArray;
+        }
+
 
     }
 }

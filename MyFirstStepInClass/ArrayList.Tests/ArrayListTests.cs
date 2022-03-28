@@ -306,8 +306,8 @@ namespace ArrayList.Tests
             Assert.AreEqual(expectedList, actualList);
         }
 
-        [TestCaseSource(typeof(AddListToEndNegativeTestSource))]
-        public void AddListToEnd_WhenLengthEqualZero_ShouldThrowNewException(MyArrayList list)
+        [TestCaseSource(typeof(AddListToNegativeTestSource))]
+        public void AddListToEnd_WhenListEqualNull_ShouldThrowNewException(MyArrayList list)
         {
             Assert.Throws<NullReferenceException>(() => list.AddListToEnd(list));
         }
@@ -319,6 +319,12 @@ namespace ArrayList.Tests
             actualList.AddListToBegining(list2);
 
             Assert.AreEqual(expectedList, actualList);
+        }
+
+        [TestCaseSource(typeof(AddListToNegativeTestSource))]
+        public void AddListToBegining_WhenListEqualNull_ShouldThrowNewException(MyArrayList list)
+        {
+            Assert.Throws<NullReferenceException>(() => list.AddListToBegining(list));
         }
 
     }

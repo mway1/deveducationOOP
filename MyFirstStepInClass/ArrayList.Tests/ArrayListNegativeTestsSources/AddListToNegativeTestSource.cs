@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArrayList.Tests.ArrayListNegativeTestsSources
 {
-    internal class AddListToEndNegativeTestSource : IEnumerable
+    internal class AddListToNegativeTestSource : IEnumerable
     {
         public IEnumerator GetEnumerator()
         {

@@ -320,12 +320,19 @@ namespace ArrayList.Tests
 
             Assert.AreEqual(expectedList, actualList);
         }
-
         [TestCaseSource(typeof(AddListToNegativeTestSource))]
         public void AddListToBegining_WhenListEqualNull_ShouldThrowNewException(MyArrayList list)
         {
             Assert.Throws<NullReferenceException>(() => list.AddListToBegining(list));
         }
 
+        [TestCaseSource(typeof(AddListByIndexTestSource))]
+        public void AddListByIndexTest(MyArrayList list,int index, MyArrayList list2, MyArrayList expectedList)
+        {
+            MyArrayList actualList = list;
+            actualList.AddListByIndex(list2,index);
+
+            Assert.AreEqual(expectedList, actualList);
+        }
     }
 }

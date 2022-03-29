@@ -50,7 +50,7 @@ namespace ArrayList.Tests
             Assert.AreEqual(expectedList, actualList);
         }
 
-        [TestCaseSource(typeof(DeleteFromEndNegativeTestSource))]
+        [TestCaseSource(typeof(DeleteFromBeginEndNegativeTestSource))]
         public void DeleteFromEnd_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
         {
             Assert.Throws<Exception>(() => list.DeleteFromEnd());
@@ -65,7 +65,7 @@ namespace ArrayList.Tests
             Assert.AreEqual(expectedList, actualList);
         }
 
-        [TestCaseSource(typeof(DeleteFromBeginningNegativeTestSource))]
+        [TestCaseSource(typeof(DeleteFromBeginEndNegativeTestSource))]
         public void DeleteFromBeginning_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
         {
             Assert.Throws<Exception>(() => list.DeleteFromBeginning());
@@ -95,7 +95,7 @@ namespace ArrayList.Tests
             Assert.AreEqual(expectedList, actualList);
         }
 
-        [TestCaseSource(typeof(DeleteFromEndElementsNegativeTestSource))]
+        [TestCaseSource(typeof(DeleteFromBeginingEndElementsNegativeTestSource))]
         public void DeleteFromEndElements_WhenCountLessLength_ShouldThrowNewException(int count, MyArrayList list)
         {
             Assert.Throws<Exception>(() => list.DeleteFromEndElements(count));
@@ -110,7 +110,7 @@ namespace ArrayList.Tests
             Assert.AreEqual(expectedList, actualList);
         }
 
-        [TestCaseSource(typeof(DeleteFromBeginingElementsNegativeTestSource))]
+        [TestCaseSource(typeof(DeleteFromBeginingEndElementsNegativeTestSource))]
         public void DeleteFromBeginingElements_WhenCountLessLength_ShouldThrowNewException(int count, MyArrayList list)
         {
             Assert.Throws<Exception>(() => list.DeleteFromBeginingElements(count));
@@ -194,7 +194,7 @@ namespace ArrayList.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCaseSource(typeof(FindMaxElementNegativeTestSource))]
+        [TestCaseSource(typeof(FindMaxMinElementNegativeTestSource))]
         public void FindMaxElement_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
         {
             Assert.Throws<Exception>(() => list.FindMaxElement());
@@ -207,7 +207,7 @@ namespace ArrayList.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCaseSource(typeof(FindMinElementNegativeTestSource))]
+        [TestCaseSource(typeof(FindMaxMinElementNegativeTestSource))]
         public void FindMinElement_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
         {
             Assert.Throws<Exception>(() => list.FindMinElement());
@@ -220,7 +220,7 @@ namespace ArrayList.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCaseSource(typeof(FindIndexOfMaxElementNegativeTestSource))]
+        [TestCaseSource(typeof(FindIndexOfMaxMinElementNegativeTestSource))]
         public void FindIndexOfMaxElement_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
         {
             Assert.Throws<Exception>(() => list.FindIndexOfMaxElement());
@@ -233,7 +233,7 @@ namespace ArrayList.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCaseSource(typeof(FindIndexOfMinElementNegativeTestSource))]
+        [TestCaseSource(typeof(FindIndexOfMaxMinElementNegativeTestSource))]
         public void FindIndexOfMinElement_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
         {
             Assert.Throws<Exception>(() => list.FindIndexOfMinElement());
@@ -247,7 +247,7 @@ namespace ArrayList.Tests
             Assert.AreEqual(expectedList, actualList);
         }
 
-        [TestCaseSource(typeof(SortAscendingBubbleSortNegativeTestSource))]
+        [TestCaseSource(typeof(SortDescAscSortNegativeTestSource))]
         public void SortAscendingBubbleSort_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
         {
             Assert.Throws<Exception>(() => list.SortAscendingBubbleSort());
@@ -261,7 +261,7 @@ namespace ArrayList.Tests
             Assert.AreEqual(expectedList, actualList);
         }
 
-        [TestCaseSource(typeof(SortDescendingSelectSortNegativeTestSource))]
+        [TestCaseSource(typeof(SortDescAscSortNegativeTestSource))]
         public void SortDescendingSelectSort_WhenLengthLessOne_ShouldThrowNewException(MyArrayList list)
         {
             Assert.Throws<Exception>(() => list.SortDescendingSelectSort());

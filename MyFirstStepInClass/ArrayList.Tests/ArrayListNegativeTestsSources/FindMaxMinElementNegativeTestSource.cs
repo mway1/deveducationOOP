@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArrayList.Tests.ArrayListNegativeTestsSources
 {
-    internal class FindMaxElementNegativeTestSource : IEnumerable
+    internal class FindMaxMinElementNegativeTestSource : IEnumerable
     {
         public IEnumerator GetEnumerator()
         {

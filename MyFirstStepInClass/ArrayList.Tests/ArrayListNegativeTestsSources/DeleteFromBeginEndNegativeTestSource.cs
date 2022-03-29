@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ArrayList.Tests.ArrayListNegativeTestsSources
 {
-    internal class SortDescendingSelectSortNegativeTestSource : IEnumerable
+    internal class DeleteFromBeginEndNegativeTestSource : IEnumerable
     {
         public IEnumerator GetEnumerator()
         {
-            yield return new object[] { new MyArrayList(new int[] { }) };
+            yield return new object[] {new MyArrayList(new int[] { }) };
         }
+
     }
 }

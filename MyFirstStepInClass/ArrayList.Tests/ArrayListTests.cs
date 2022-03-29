@@ -334,5 +334,19 @@ namespace ArrayList.Tests
 
             Assert.AreEqual(expectedList, actualList);
         }
+
+        [TestCaseSource(typeof(AddListByIndexNegativeTestSource))]
+        public void AddListByIndex_WhenListEqualNull_ShouldThrowNewException(int index,MyArrayList list)
+        {
+            Assert.Throws<NullReferenceException>(() => list.AddListByIndex(list,index));
+        }
+
+        [TestCaseSource(typeof(AddListByIndexExeptionNegativeTestSource))]
+        public void AddListByIndex_WhenIndexLessOneOrIndexMoreLength_ShouldThrowNewException(int index, MyArrayList list)
+        {
+            Assert.Throws<ArgumentException>(() => list.AddListByIndex(list, index));
+        }
+
+
     }
 }
